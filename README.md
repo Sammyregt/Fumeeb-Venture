@@ -1,6 +1,6 @@
 <h1 align="center">Fummeb-Venture Store 🛒</h1>
 
-![Demo App](/frontend/public/screenshot-for-readme.pngs)
+![Demo App](/frontend/public/screenshot-for-readme.png)
 
 ### Setup .env file
 
