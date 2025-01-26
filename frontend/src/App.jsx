@@ -3,6 +3,10 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import SignUpPage from "./pages/SignUpPage";
 import LoginPage from "./pages/LoginPage";
+<<<<<<< HEAD
+=======
+import AdminPage from "./pages/AdminPage";
+>>>>>>> d30b5657f5e8286e8bb5aad29002516481a7dcb7
 import CategoryPage from "./pages/CategoryPage";
 
 import Navbar from "./components/Navbar";
@@ -12,7 +16,12 @@ import { useEffect } from "react";
 import LoadingSpinner from "./components/LoadingSpinner";
 import CartPage from "./pages/CartPage";
 import { useCartStore } from "./stores/useCartStore";
+<<<<<<< HEAD
 
+=======
+import PurchaseSuccessPage from "./pages/PurchaseSuccessPage";
+import PurchaseCancelPage from "./pages/PurchaseCancelPage";
+>>>>>>> d30b5657f5e8286e8bb5aad29002516481a7dcb7
 
 function App() {
 	const { user, checkAuth, checkingAuth } = useUserStore();
@@ -44,8 +53,22 @@ function App() {
 					<Route path='/' element={<HomePage />} />
 					<Route path='/signup' element={!user ? <SignUpPage /> : <Navigate to='/' />} />
 					<Route path='/login' element={!user ? <LoginPage /> : <Navigate to='/' />} />
+<<<<<<< HEAD
 					<Route path='/category/:category' element={<CategoryPage />} />
 					<Route path='/cart' element={user ? <CartPage /> : <Navigate to='/login' />} />
+=======
+					<Route
+						path='/secret-dashboard'
+						element={user?.role === "admin" ? <AdminPage /> : <Navigate to='/login' />}
+					/>
+					<Route path='/category/:category' element={<CategoryPage />} />
+					<Route path='/cart' element={user ? <CartPage /> : <Navigate to='/login' />} />
+					<Route
+						path='/purchase-success'
+						element={user ? <PurchaseSuccessPage /> : <Navigate to='/login' />}
+					/>
+					<Route path='/purchase-cancel' element={user ? <PurchaseCancelPage /> : <Navigate to='/login' />} />
+>>>>>>> d30b5657f5e8286e8bb5aad29002516481a7dcb7
 				</Routes>
 			</div>
 			<Toaster />
@@ -53,4 +76,8 @@ function App() {
 	);
 }
 
+<<<<<<< HEAD
 export default App;
+=======
+export default App;
+>>>>>>> d30b5657f5e8286e8bb5aad29002516481a7dcb7

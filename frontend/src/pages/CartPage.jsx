@@ -3,7 +3,13 @@ import { useCartStore } from "../stores/useCartStore";
 import { motion } from "framer-motion";
 import { ShoppingCart } from "lucide-react";
 import CartItem from "../components/CartItem";
+<<<<<<< HEAD
 
+=======
+import PeopleAlsoBought from "../components/PeopleAlsoBought";
+import OrderSummary from "../components/OrderSummary";
+import GiftCouponCard from "../components/GiftCouponCard";
+>>>>>>> d30b5657f5e8286e8bb5aad29002516481a7dcb7
 
 const CartPage = () => {
 	const { cart } = useCartStore();
@@ -27,7 +33,11 @@ const CartPage = () => {
 								))}
 							</div>
 						)}
+<<<<<<< HEAD
 						
+=======
+						{cart.length > 0 && <PeopleAlsoBought />}
+>>>>>>> d30b5657f5e8286e8bb5aad29002516481a7dcb7
 					</motion.div>
 
 					{cart.length > 0 && (
@@ -37,8 +47,13 @@ const CartPage = () => {
 							animate={{ opacity: 1, x: 0 }}
 							transition={{ duration: 0.5, delay: 0.4 }}
 						>
+<<<<<<< HEAD
 							
 							
+=======
+							<OrderSummary />
+							<GiftCouponCard />
+>>>>>>> d30b5657f5e8286e8bb5aad29002516481a7dcb7
 						</motion.div>
 					)}
 				</div>
