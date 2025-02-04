@@ -29,7 +29,7 @@ function App() {
 		getCartItems();
 	}, [getCartItems, user]);
 
-	// if (checkingAuth) return <LoadingSpinner />;
+	if (checkingAuth) return <LoadingSpinner />;
 
 	return (
 		<div className='min-h-screen bg-gray-900 text-white relative overflow-hidden'>
@@ -46,6 +46,10 @@ function App() {
 					<Route path='/' element={<HomePage />} />
 					<Route path='/signup' element={!user ? <SignUpPage /> : <Navigate to='/' />} />
 					<Route path='/login' element={!user ? <LoginPage /> : <Navigate to='/' />} />
+					<Route
+						path='/secret-dashboard'
+						element={user?.role === "admin" ? <AdminPage /> : <Navigate to='/login' />}
+					/>
 
 					<Route path='/category/:category' element={<CategoryPage />} />
 					<Route path='/cart' element={user ? <CartPage /> : <Navigate to='/login' />} />
